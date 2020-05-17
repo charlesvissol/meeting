@@ -3,6 +3,7 @@ package org.openjdev.screen.client.utils;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
+
 /**
  * Represents a selected area of the screen device 
  * @author Charles Vissol (Openjdev)

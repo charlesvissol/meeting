@@ -1,5 +1,6 @@
 package org.openjdev.screen.client.utils.sound;
 
+
 public class Primitives {
 
 	public static boolean isFloat(String strValue) {

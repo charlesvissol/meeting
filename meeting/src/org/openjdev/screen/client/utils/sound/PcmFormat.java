@@ -3,6 +3,7 @@ package org.openjdev.screen.client.utils.sound;
 import javax.sound.sampled.AudioFormat;
 
 
+
 public class PcmFormat {
 
 	private final int rate;

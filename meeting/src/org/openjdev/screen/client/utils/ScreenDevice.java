@@ -1,6 +1,7 @@
 package org.openjdev.screen.client.utils;
 
 
+
 /**
  * Utility class to represent a screen device
  * @author Charles Vissol

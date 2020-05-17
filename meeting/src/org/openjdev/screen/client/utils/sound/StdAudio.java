@@ -38,6 +38,7 @@ import javax.sound.sampled.LineEvent;
  */
 public final class StdAudio {
 
+	
     /**
      *  The sample rate: 44,100 Hz for CD quality audio.
      */

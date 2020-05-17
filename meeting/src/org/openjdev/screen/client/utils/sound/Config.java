@@ -1,6 +1,5 @@
 package org.openjdev.screen.client.utils.sound;
 
-
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
