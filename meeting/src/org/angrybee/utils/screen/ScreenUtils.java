@@ -1,4 +1,4 @@
-package org.openjdev.utils.screen;
+package org.angrybee.utils.screen;
 
 import java.awt.AWTException;
 import java.awt.GraphicsDevice;

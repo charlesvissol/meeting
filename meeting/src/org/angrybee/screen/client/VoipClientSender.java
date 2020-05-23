@@ -1,11 +1,11 @@
-package org.openjdev.screen.client;
+package org.angrybee.screen.client;
 
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import org.openjdev.utils.net.IPUtils;
-import org.openjdev.utils.sound.Microphone;
+import org.angrybee.utils.net.IPUtils;
+import org.angrybee.utils.sound.Microphone;
 
 /**
  * Client capturing audio from microphone to send sound to server

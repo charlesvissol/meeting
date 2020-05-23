@@ -1,4 +1,4 @@
-package org.openjdev.utils.screen;
+package org.angrybee.utils.screen;
 
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;

@@ -1,4 +1,4 @@
-package org.openjdev.utils.sound;
+package org.angrybee.utils.sound;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;

@@ -1,4 +1,4 @@
-package org.openjdev.screen.client;
+package org.angrybee.screen.client;
 
 /**
  * 

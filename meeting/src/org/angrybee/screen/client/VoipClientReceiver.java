@@ -1,8 +1,9 @@
-package org.openjdev.screen.client;
+package org.angrybee.screen.client;
 
 import java.io.IOException;
 import java.net.Socket;
-import org.openjdev.utils.sound.Speaker;
+
+import org.angrybee.utils.sound.Speaker;
 
 /**
  * Client receiving audio data from server.<br>

@@ -1,4 +1,4 @@
-package org.openjdev.screen.server;
+package org.angrybee.screen.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerAdapter;
