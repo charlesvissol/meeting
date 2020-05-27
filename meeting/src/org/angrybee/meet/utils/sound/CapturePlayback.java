@@ -1,4 +1,4 @@
-package org.angrybee.utils.sound;
+package org.angrybee.meet.utils.sound;
 
 /*
  * @(#)CapturePlayback.java	1.11	99/12/03

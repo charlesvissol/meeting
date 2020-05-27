@@ -1,4 +1,4 @@
-package org.angrybee.utils.screen;
+package org.angrybee.meet.utils.screen;
 
 import java.awt.AWTException;
 import java.awt.GraphicsDevice;

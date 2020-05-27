@@ -1,9 +1,9 @@
-package org.angrybee.screen.client;
+package org.angrybee.meet.screen.client;
 
 import java.io.IOException;
 import java.net.Socket;
 
-import org.angrybee.utils.sound.Speaker;
+import org.angrybee.meet.utils.sound.Speaker;
 
 /**
  * Client receiving audio data from server.<br>

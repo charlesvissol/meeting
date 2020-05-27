@@ -1,11 +1,11 @@
-package org.angrybee.screen.client;
+package org.angrybee.meet.screen.client;
 
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import org.angrybee.utils.net.IPUtils;
-import org.angrybee.utils.sound.Microphone;
+import org.angrybee.meet.utils.net.IPUtils;
+import org.angrybee.meet.utils.sound.Microphone;
 
 /**
  * Client capturing audio from microphone to send sound to server
@@ -174,7 +174,7 @@ public class VoipClientSender implements Runnable {
 					
 						socket.getOutputStream().write(buffer, 0, read);
 						
-						System.out.println("Data sent");
+						//System.out.println("Data sent");
 						
 					}
 					
@@ -191,10 +191,13 @@ public class VoipClientSender implements Runnable {
 		
 	}
 	
-	
+	/**
+	 * 
+	 * @param argv
+	 */
 	public static void main(String argv[]) {
 		
-		VoipClientSender client = new VoipClientSender(IPUtils.getInetAddresses(), 5060);
+		VoipClientSender client = new VoipClientSender(IPUtils.getLocalIP(), 5060);
 		client.init();
 		client.start();
 		

@@ -1,4 +1,4 @@
-package org.angrybee.screen.client;
+package org.angrybee.meet.screen.client;
 
 public class ScreenReceiver implements Runnable {
 

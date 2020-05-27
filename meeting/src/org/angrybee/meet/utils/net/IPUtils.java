@@ -1,4 +1,4 @@
-package org.angrybee.utils.net;
+package org.angrybee.meet.utils.net;
 
 import java.io.IOException;
 import java.net.*;
@@ -10,10 +10,10 @@ import java.util.Iterator;
 public class IPUtils {
 
 	/**
-	 * Get the IP address of a PC
+	 * Get the IP address of a local PC
 	 * @return String representation of the IP address
 	 */
-	public static String getInetAddresses(){
+	public static String getLocalIP(){
 		
 		InetAddress thisIp = null;
 		
@@ -58,7 +58,7 @@ public class IPUtils {
 	}
 
 	public static void main(String args[]) {
-		System.out.println(IPUtils.getInetAddresses());
+		System.out.println(IPUtils.getLocalIP());
 		
 	}
 
