@@ -1,14 +1,23 @@
 package org.angrybee.meet.utils.screen;
 
 import java.awt.AWTException;
+import java.awt.Graphics;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.Image;
+import java.awt.MouseInfo;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.imageio.ImageIO;
 
 
 
@@ -91,6 +100,22 @@ public class ScreenUtils {
 		return robot;
 	}
 	
+	/**
+	 * Draw a pointer in the screen area. For instance 
+	 * TODO Control position of cursor if out of the rectangle area
+	 * @param screenCapture Image buffered
+	 * @throws IOException
+	 * @throws URISyntaxException
+	 */
+    public static void drawMousePointer(BufferedImage screenCapture) throws IOException, URISyntaxException {
+
+        InputStream arrow = ScreenUtils.class.getResourceAsStream("mouse-pointer.png");
+        Image cursor = ImageIO.read(arrow);
+    	
+        Graphics graphics2D = screenCapture.createGraphics();
+        Point p = MouseInfo.getPointerInfo().getLocation();
+        graphics2D.drawImage(cursor, p.x-12, p.y-12, 25, 25, null);
+    }
 	
 	
 }
