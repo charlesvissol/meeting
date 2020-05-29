@@ -1,8 +1,6 @@
 package org.angrybee.meet.screen.client;
 
-import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 import org.angrybee.meet.utils.net.IPUtils;
 import org.angrybee.meet.utils.sound.Microphone;
