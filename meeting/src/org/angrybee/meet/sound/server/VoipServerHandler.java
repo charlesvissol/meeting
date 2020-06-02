@@ -1,4 +1,4 @@
-package org.angrybee.sound.server;
+package org.angrybee.meet.sound.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerAdapter;

@@ -1,4 +1,4 @@
-package org.angrybee.sound.server;
+package org.angrybee.meet.sound.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
