@@ -6,10 +6,15 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
 import javax.imageio.ImageIO;
+
 import org.angrybee.meet.utils.screen.UIImgDisplayer;
+import org.angrybee.sound.server.VoipServerHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ScreenClientReceiver implements Runnable {
 
+	private static final Logger logger = LoggerFactory.getLogger(ScreenClientReceiver.class);
 	
 	/**
 	 * Panel to display image from server
@@ -112,6 +117,7 @@ public class ScreenClientReceiver implements Runnable {
 	public void init() {
 		synchronized(this) {
 			this.runner = new Thread(this);
+			logger.info("Client receiver initialized to accept screens");
 		}
 	}
 
@@ -162,6 +168,8 @@ public class ScreenClientReceiver implements Runnable {
 		
 		}
 
+		logger.info("Client receiver is alive");
+		
 		while (socket.isConnected()) {
 			if(!this.isMute) {//Not Mute by default
 
@@ -213,7 +221,6 @@ public class ScreenClientReceiver implements Runnable {
 
 				}
 				
-				//int read = socket.getInputStream().read(buffer, 0, buffer.length);
 			}
 		}
 		

@@ -1,4 +1,4 @@
-package org.angrybee.meet.screen.server;
+package org.angrybee.sound.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -61,14 +61,14 @@ public class VoipServer {
 	}
 
 	/**
-	 * Binds the server to a {@link com.swagger.VoipServer#PORT}.
+	 * Binds the server to a {@link org.angrybee.sound.server.swagger.VoipServer#PORT}.
 	 * 
 	 * @param port
 	 *            The port to bind to.
 	 * 
 	 * @throws Exception
 	 *             If we could not bind on the specified
-	 *             {@link com.swagger.VoipServer#PORT}.
+	 *             {@link org.angrybee.sound.server.swagger.VoipServer#PORT}.
 	 */
 	public void bind(int port) throws Exception {
 		try {

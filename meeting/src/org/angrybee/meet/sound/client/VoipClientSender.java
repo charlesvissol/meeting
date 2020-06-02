@@ -1,4 +1,4 @@
-package org.angrybee.meet.screen.client;
+package org.angrybee.meet.sound.client;
 
 import java.net.Socket;
 
@@ -195,7 +195,7 @@ public class VoipClientSender implements Runnable {
 	 */
 	public static void main(String argv[]) {
 		
-		VoipClientSender client = new VoipClientSender(IPUtils.getLocalIP(), 5060);
+		VoipClientSender client = new VoipClientSender(IPUtils.getIp(), 5060);
 		client.init();
 		client.start();
 		

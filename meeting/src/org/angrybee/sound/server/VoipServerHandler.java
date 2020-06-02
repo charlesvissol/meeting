@@ -1,4 +1,4 @@
-package org.angrybee.meet.screen.server;
+package org.angrybee.sound.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerAdapter;
@@ -43,7 +43,7 @@ public class VoipServerHandler extends ChannelHandlerAdapter {
 
 	/**
 	 * Reads incoming data and sends it to stored channels in the
-	 * {@link com.swagger.server.VoipServerHandler}
+	 * {@link org.angrybee.sound.server.swagger.server.VoipServerHandler}
 	 */
 	public void channelRead(ChannelHandlerContext ctx, Object msg) {
 		ByteBuf buffer = (ByteBuf) msg;
