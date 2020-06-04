@@ -1,5 +1,7 @@
-package org.angrybee.meet.sound.server;
+package org.angrybee.meet.screen.server;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -12,20 +14,19 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.util.concurrent.GlobalEventExecutor;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
- * A simple Voip Server
- * 
- * @author Suraj Kumar <k975@live.co.uk>
- * @version 1.0
+ * Server to relay Screen media in order to share screen from sender to receiver
+ * @author Charles Vissol
+ *
  */
-public class VoipServer {
+public class ScreenServer {
 	/**
 	 * The Logger instance
 	 */
-	private static final Logger logger = LoggerFactory.getLogger(VoipServer.class);
+	private static final Logger logger = LoggerFactory.getLogger(ScreenServer.class);
+	/**
+	 * The port the server will listen on
+	 */
 
 	private EventLoopGroup boss;
 	private EventLoopGroup worker;
@@ -35,9 +36,9 @@ public class VoipServer {
 	private ChannelGroup group;
 
 	/**
-	 * Creates a new VoipServer
+	 * Creates a new ScreenServer
 	 */
-	public VoipServer() {
+	public ScreenServer() {
 		
 		this.boss = new NioEventLoopGroup();
 		this.worker = new NioEventLoopGroup();
@@ -57,14 +58,9 @@ public class VoipServer {
 	}
 
 	/**
-	 * Binds the server to a {@link org.angrybee.sound.server.swagger.VoipServer#PORT}.
-	 * 
-	 * @param port
-	 *            The port to bind to.
-	 * 
-	 * @throws Exception
-	 *             If we could not bind on the specified
-	 *             {@link org.angrybee.sound.server.swagger.VoipServer#PORT}.
+	 * Binds the server to a {@link org.angrybee.sound.server.ScreenServer#PORT}.
+	 * @param port The port to bind to.
+	 * @throws Exception If we could not bind on the specified port
 	 */
 	public void bind(int port) throws Exception {
 		try {
@@ -87,7 +83,7 @@ public class VoipServer {
 
 				@Override
 				public void initChannel(SocketChannel channel) {
-					channel.pipeline().addLast(new VoipServerHandler(group));
+					channel.pipeline().addLast(new ScreenServerHandler(group));
 				}
 
 			});
@@ -104,6 +100,7 @@ public class VoipServer {
 			bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
 
 			ChannelFuture future = bootstrap.bind(port).sync();
+			
 			logger.info("Successfully binded server to port:" + port);
 
 			future.channel().closeFuture().sync();
@@ -120,6 +117,7 @@ public class VoipServer {
 	 * @throws Exception If we could not start the server
 	 */
 	public static void main(String[] args) throws Exception {
-		new VoipServer().bind(5060);
+		ScreenServer server = new ScreenServer();
+		server.bind(5061);
 	}
 }

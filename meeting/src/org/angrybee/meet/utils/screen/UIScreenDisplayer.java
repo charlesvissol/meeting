@@ -11,27 +11,27 @@ import javax.swing.UnsupportedLookAndFeelException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class UIImgDisplayer extends JPanel {
+public class UIScreenDisplayer extends JPanel {
 
 	private JLabel label;
 
-	public UIImgDisplayer() {
+	public UIScreenDisplayer() {
 		// setSize(1000, 750); <---- do not do it
 		// setResizable(false); <----- do not do it either, unless any good reason
 
 	     try {
 	         UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 	      } catch (ClassNotFoundException ex) {
-	             Logger.getLogger(UIImgDisplayer.class.getName())
+	             Logger.getLogger(UIScreenDisplayer.class.getName())
 	                 .log(Level.SEVERE, null, ex);
 	      } catch (InstantiationException ex) {
-	             Logger.getLogger(UIImgDisplayer.class.getName())
+	             Logger.getLogger(UIScreenDisplayer.class.getName())
 	                 .log(Level.SEVERE, null, ex);
 	      } catch (IllegalAccessException ex) {
-	             Logger.getLogger(UIImgDisplayer.class.getName())
+	             Logger.getLogger(UIScreenDisplayer.class.getName())
 	                 .log(Level.SEVERE, null, ex);
 	      } catch (UnsupportedLookAndFeelException ex) {
-	             Logger.getLogger(UIImgDisplayer.class.getName())
+	             Logger.getLogger(UIScreenDisplayer.class.getName())
 	                 .log(Level.SEVERE, null, ex);
 	      }
 	  		

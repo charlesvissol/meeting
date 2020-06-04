@@ -20,7 +20,6 @@ import org.angrybee.meet.utils.sound.Speaker;
  * 
  * Like a Thread, the class could be stopped (stop() method), put in pause during an interval time (ms) with sleep() method.
  * 
- * 
  * @author Charles Vissol
  *
  */
