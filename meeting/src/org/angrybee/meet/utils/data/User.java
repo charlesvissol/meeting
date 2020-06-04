@@ -9,7 +9,9 @@ public class User implements Serializable {
 	
 	private String displayname;
 	
-	private String password;
+	private String ipAddress;
+	
+	private String[] networkInterfaces;
 	
 	private String firstname;
 	
@@ -17,10 +19,10 @@ public class User implements Serializable {
 	
 	private String email;
 	
-	public User(String id,String displayname, String password, String firstname, String lastname, String email) {
+	public User(String id,String displayname, String ipAddress, String firstname, String lastname, String email) {
 		this.id = id;
 		this.displayname = displayname;
-		this.password = password;
+		this.ipAddress = ipAddress;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
@@ -33,23 +35,31 @@ public class User implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
+	
+	public String[] getNetworkInterfaces() {
+		return networkInterfaces;
+	}
+
+	public void setNetworkInterfaces(String[] networkInterfaces) {
+		this.networkInterfaces = networkInterfaces;
+	}
+
+	public void setDisplayname(String displayname) {
+		this.displayname = displayname;
+	}
 
 	public String getDisplayname() {
 		return displayname;
 	}
 
-	public void setDisplyname(String displayname) {
-		this.displayname = displayname;
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getIpAddress() {
+		return this.ipAddress;
 	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
+	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -73,7 +83,5 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	
 	
 }

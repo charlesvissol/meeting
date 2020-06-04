@@ -5,6 +5,11 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ * Class to serialize locally the user's informations 
+ * @author vissol
+ *
+ */
 public class Serializer {
 
 	
