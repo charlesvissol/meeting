@@ -11,7 +11,11 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ * Utility class to manage network addresses
+ * @author Charles Vissol
+ *
+ */
 public class IPUtils {
 	
 
@@ -35,7 +39,7 @@ public class IPUtils {
 	 * Get the list of network interfaces that provide unique network identifier to the local PC
 	 * @return List of network interfaces values
 	 */
-	public static ArrayList<String> getNetworkInterfaces() {
+	public static String[] getNetworkInterfaces() {
 		
 		ArrayList<String> netInterfaces = new ArrayList<String>();
 		Enumeration<NetworkInterface> interfaces = null;
@@ -61,7 +65,15 @@ public class IPUtils {
 			
 			}
 		}
-		return netInterfaces;
+		
+		/**
+		 * Convert ArrayList to Array
+		 */
+		String[] arrayNetInterfaces = new String[netInterfaces.size()];
+		arrayNetInterfaces = netInterfaces.toArray(arrayNetInterfaces);
+		
+		
+		return arrayNetInterfaces;
 	}
 
     
@@ -144,12 +156,12 @@ public class IPUtils {
 
 		System.out.println(IPUtils.getIp());
 		
-		ArrayList<String> list = IPUtils.getNetworkInterfaces();
+		String[] list = IPUtils.getNetworkInterfaces();
 		
-		for (Iterator iterator = list.iterator(); iterator.hasNext();) {
-			String string = (String) iterator.next();
-			System.out.println(string);
+		for (int i = 0; i < list.length; i++) {
+			System.out.println(list[i]);
 		}
+		
 	}
 
 }
