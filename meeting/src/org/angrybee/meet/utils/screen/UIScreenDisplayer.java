@@ -1,6 +1,7 @@
 package org.angrybee.meet.utils.screen;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.Robot;
@@ -46,7 +47,7 @@ public class UIScreenDisplayer extends JPanel {
 	                 .log(Level.SEVERE, null, ex);
 	      }
 	  		
-		
+		this.setBackground(Color.darkGray);
 		
 		this.label = new UIScreenContainer();
 		this.setLayout(new BorderLayout());
