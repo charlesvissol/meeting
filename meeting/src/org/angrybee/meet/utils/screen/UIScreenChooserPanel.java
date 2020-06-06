@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -82,7 +83,7 @@ public class UIScreenChooserPanel extends JPanel {
 		
 		JFrame frame = new JFrame();
 		
-		frame.setSize(700, 700);
+		frame.setSize(400, 250);
 		frame.setLayout(new BorderLayout());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -112,7 +113,7 @@ class UIScreenChooserContainer extends JLabel {
 	 * By default value is false because UIScreenChooserContainer is not selected by the user.
 	 * If UIScreenChooserContainer is selected, value is true
 	 */
-	private boolean selected = false;
+	private boolean selected;
 	
 	/**
 	 * Setter for UIScreenChooserContainer status (selected or not by the user)
@@ -137,13 +138,6 @@ class UIScreenChooserContainer extends JLabel {
 	
 
 	/**
-	 * accessible method to change background color
-	 */
-	public void changeBackground(Color color) {
-		this.setBackground(color);
-	}
-	
-	/**
 	 * Constructor that gets parent JPanel in parameter to register it and add a property change 
 	 * event on background color: when user select UIScreenChooserContainer, that turns background 
 	 * color to black for UIScreenChooserContainer but also its parent panel
@@ -165,10 +159,21 @@ class UIScreenChooserContainer extends JLabel {
 				String property = event.getPropertyName();
 
 				if ("background".equals(property)) {
+					
+					
+					
+					
 					if(selected) {//Black background if screen selected
-						parent.setBackground(Color.black);
-					} else {//Dark gray background if screen deselected
 						parent.setBackground(Color.darkGray);
+						setBackground(Color.darkGray);
+						selected = false;
+
+
+					} else {//Dark gray background if screen deselected
+						parent.setBackground(Color.black);
+						setBackground(Color.black);
+						selected = true;
+
 					}
 
 				}
@@ -185,10 +190,10 @@ class UIScreenChooserContainer extends JLabel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(selected) {//By default, dark gray color for background
-					changeBackground(Color.darkGray);
+					setBackground(Color.darkGray);
 					selected = false;
 				} else {//If selected, black color for background
-					changeBackground(Color.black);
+					setBackground(Color.black);
 					selected = true;
 				}
 				

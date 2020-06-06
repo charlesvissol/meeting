@@ -1,6 +1,9 @@
 package org.angrybee.meet.examples;
 
 import javax.swing.*;
+
+import org.angrybee.meet.utils.ui.SpringUtilities;
+
 import java.awt.Color;
 import java.awt.Container;
 import java.util.Calendar;

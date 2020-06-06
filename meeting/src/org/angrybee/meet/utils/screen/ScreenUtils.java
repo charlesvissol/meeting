@@ -28,6 +28,19 @@ import javax.imageio.ImageIO;
  *
  */
 public class ScreenUtils {
+	
+	
+	public static int[] getDefaultScreenSize() {
+		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		
+		GraphicsDevice gd = ge.getDefaultScreenDevice();
+		
+		int size[] = {gd.getDisplayMode().getWidth(), gd.getDisplayMode().getHeight()};
+		
+		return size;
+	}
+	
+	
 
 	/**
 	 * Returns the image of each screen connected to the current user Computer

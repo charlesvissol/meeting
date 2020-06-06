@@ -1,4 +1,4 @@
-package org.angrybee.meet.examples;
+package org.angrybee.meet.utils.ui;
 
 import javax.swing.*;
 import javax.swing.SpringLayout;
@@ -191,4 +191,15 @@ public class SpringUtilities {
         pCons.setConstraint(SpringLayout.SOUTH, y);
         pCons.setConstraint(SpringLayout.EAST, x);
     }
+    
+    public static int getRows(int components, int columns) {
+    	
+    	
+    	
+    	
+    	return 0;
+    }
+    
+    
+    
 }
