@@ -12,6 +12,8 @@ import javax.swing.JLabel;
  */
 public class UIScreenContainer extends JLabel {
 
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * When component is resized, image size is updated
 	 */

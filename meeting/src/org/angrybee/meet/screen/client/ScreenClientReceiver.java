@@ -8,7 +8,7 @@ import java.net.Socket;
 import javax.imageio.ImageIO;
 
 import org.angrybee.meet.sound.server.VoipServerHandler;
-import org.angrybee.meet.utils.screen.UIScreenDisplayer;
+import org.angrybee.meet.utils.screen.UIScreenDisplayerPanel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +19,7 @@ public class ScreenClientReceiver implements Runnable {
 	/**
 	 * Panel to display image from server
 	 */
-	private UIScreenDisplayer displayImage;
+	private UIScreenDisplayerPanel displayImage;
 
 
 	/**

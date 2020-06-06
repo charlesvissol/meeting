@@ -23,31 +23,19 @@ import java.util.logging.Logger;
  * @author Charles Vissol
  *
  */
-public class UIScreenDisplayer extends JPanel {
+public class UIScreenDisplayerPanel extends JPanel {
 
+	private static final long serialVersionUID = 1L;
+	
 	private UIScreenContainer label;
 
-	public UIScreenDisplayer() {
-		// setSize(1000, 750); <---- do not do it
-		// setResizable(false); <----- do not do it either, unless any good reason
+	/**
+	 * Base constructor to display presenter screen in a panel
+	 * No title
+	 */
+	public UIScreenDisplayerPanel() {
 
-	     try {
-	         UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-	      } catch (ClassNotFoundException ex) {
-	             Logger.getLogger(UIScreenDisplayer.class.getName())
-	                 .log(Level.SEVERE, null, ex);
-	      } catch (InstantiationException ex) {
-	             Logger.getLogger(UIScreenDisplayer.class.getName())
-	                 .log(Level.SEVERE, null, ex);
-	      } catch (IllegalAccessException ex) {
-	             Logger.getLogger(UIScreenDisplayer.class.getName())
-	                 .log(Level.SEVERE, null, ex);
-	      } catch (UnsupportedLookAndFeelException ex) {
-	             Logger.getLogger(UIScreenDisplayer.class.getName())
-	                 .log(Level.SEVERE, null, ex);
-	      }
-	  		
-		this.setBackground(Color.darkGray);
+		//this.setBackground(Color.darkGray);
 		
 		this.label = new UIScreenContainer();
 		this.setLayout(new BorderLayout());
@@ -78,14 +66,27 @@ public class UIScreenDisplayer extends JPanel {
 
 	
 	public static void main(String argv[]) {
+	     try {
+	    	 UIManager.setLookAndFeel("com.formdev.flatlaf.FlatDarculaLaf");
+	      } catch (ClassNotFoundException ex) {
+	             Logger.getLogger(UIScreenDisplayerPanel.class.getName())
+	                 .log(Level.SEVERE, null, ex);
+	      } catch (InstantiationException ex) {
+	             Logger.getLogger(UIScreenDisplayerPanel.class.getName())
+	                 .log(Level.SEVERE, null, ex);
+	      } catch (IllegalAccessException ex) {
+	             Logger.getLogger(UIScreenDisplayerPanel.class.getName())
+	                 .log(Level.SEVERE, null, ex);
+	      } catch (UnsupportedLookAndFeelException ex) {
+	             Logger.getLogger(UIScreenDisplayerPanel.class.getName())
+	                 .log(Level.SEVERE, null, ex);
+	      }
 		
 		JFrame frame = new JFrame();
 		frame.setSize(700, 700);
 		frame.setLayout(new BorderLayout());
 		
-		UIScreenDisplayer display = new UIScreenDisplayer();
-		
-		Robot robot = ScreenUtils.getRobot();
+		UIScreenDisplayerPanel display = new UIScreenDisplayerPanel();
 		
 		BufferedImage[] array = ScreenUtils.getScreens();
 		
