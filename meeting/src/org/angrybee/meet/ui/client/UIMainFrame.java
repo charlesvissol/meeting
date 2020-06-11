@@ -1,12 +1,17 @@
 package org.angrybee.meet.ui.client;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.FlowLayout;
+
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
+import org.angrybee.meet.utils.screen.ScreenUtils;
 
 public class UIMainFrame {
 	
@@ -42,7 +47,10 @@ public class UIMainFrame {
 			panel.add(container, BorderLayout.CENTER);
 
 			// Display the window.
-			mainFrame.pack();
+			int[] size = ScreenUtils.getDefaultScreenSize();
+			
+			mainFrame.setBounds(0, 0, size[0], size[1]);
+			//mainFrame.pack();
 	        mainFrame.setVisible(true);	     
 	     
 	     
