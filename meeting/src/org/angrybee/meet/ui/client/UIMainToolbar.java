@@ -14,6 +14,7 @@ public class UIMainToolbar extends JToolBar {
 	private static final long serialVersionUID = 1L;
 
 	JLabel meeting;
+	JLabel user;
 
 	public UIMainToolbar() {
 		initComponents();
@@ -25,6 +26,11 @@ public class UIMainToolbar extends JToolBar {
 
 		this.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		
+		
+		
+		/**
+		 * Meeting
+		 */
 		URL meetingImageURL = UIMainToolbar.class.getResource("calendar.png");
 
 		Image meetingImage = Toolkit.getDefaultToolkit().getImage(meetingImageURL);
@@ -32,9 +38,26 @@ public class UIMainToolbar extends JToolBar {
 		
 		this.meeting = new JLabel();
 		this.meeting.setIcon(meetingIcon);
-		
-		this.add(this.meeting);
 
+		/**
+		 * User
+		 */
+		URL userImageURL = UIMainToolbar.class.getResource("user.png");
+
+		Image userImage = Toolkit.getDefaultToolkit().getImage(userImageURL);
+		ImageIcon userIcon = new ImageIcon(userImage);
+		
+		this.user = new JLabel("Charles Vissol");
+		this.user.setIcon(userIcon);
+		
+		
+		/**
+		 * Add components in the toolbar
+		 */
+		this.add(this.meeting);
+		this.add(this.user);
+		
+		
 	}
 
 }

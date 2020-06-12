@@ -1,6 +1,13 @@
 package org.angrybee.meet.utils.io;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 
 /**
  * Set of utility methods for input/output
@@ -76,6 +83,37 @@ public class IOUtils {
 		return true;
 		
 	}
+	
+	/**
+	 * Write in a file a String content in one time
+	 * @param content String content to write into text file
+	 * @param path Full path of the file to write
+	 */
+	public static void writeText(String content, String path) {
+		
+		File file = new File(path);
+		
+		try {
+			Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "UTF-8"));
+			
+			out.append(content);
+			out.flush();
+			out.close();
+			
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+	
+	
 	
 	
 }
