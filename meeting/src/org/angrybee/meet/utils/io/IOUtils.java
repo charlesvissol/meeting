@@ -92,8 +92,12 @@ public class IOUtils {
 	public static void writeText(String content, String path) {
 		
 		File file = new File(path);
+
 		
 		try {
+			if(!file.exists())
+				file.createNewFile();
+			
 			Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "UTF-8"));
 			
 			out.append(content);

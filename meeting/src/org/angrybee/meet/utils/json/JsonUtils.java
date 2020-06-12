@@ -3,7 +3,9 @@ package org.angrybee.meet.utils.json;
 import java.io.File;
 import java.io.IOException;
 
+import org.angrybee.meet.utils.data.User;
 import org.angrybee.meet.utils.io.IOUtils;
+import org.angrybee.meet.utils.net.IPUtils;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -45,7 +47,12 @@ public class JsonUtils {
 
 	
 	
-	
+	/**
+	 * Convert a Json file content to an object
+	 * @param path Full path of the Json file
+	 * @param obj Object to load
+	 * @return the object its data
+	 */
 	public static Object fromJsonFile(String path, Object obj) {
 		ObjectMapper mapper = new ObjectMapper();
 		
@@ -64,6 +71,12 @@ public class JsonUtils {
 		return obj;
 	}
 
+	/**
+	 * Convert Json string content to an object
+	 * @param content String content in Json format
+	 * @param obj Object to load
+	 * @return Object with loaded Json content
+	 */
 	public static Object fromJsonString(String content, Object obj) {
 		ObjectMapper mapper = new ObjectMapper();
 		
@@ -83,6 +96,39 @@ public class JsonUtils {
 	}
 	
 	
+	public static void main(String argv[]) {
+		
+		User user = new User();
+		
+		
+		user.setDisplayname("Charles Vissol");
+		user.setFirstname("Charles");
+		user.setLastname("Vissol");
+		user.setId("A094614");
+		user.setIpAddress(IPUtils.getIp());
+		user.setNetworkInterfaces(IPUtils.getNetworkInterfaces());
+		
+		JsonUtils.toJsonFile("/home/vissol/Downloads/user.json", user);
+		
+		
+		
+		user = (User) JsonUtils.fromJsonFile("/home/vissol/Downloads/user.json", user);
+		
+		System.out.println(user.toString());
+		
+		String userJson = user.toString();
+		
+		User user2 = new User();
+		
+		user2 = (User) JsonUtils.fromJsonString(userJson, user2);
+		
+		
+		System.out.println(user2.hashCode());
+		System.out.println(user2.toString());
+		
+		
+		
+	}
 	
 	
 }

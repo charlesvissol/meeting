@@ -2,6 +2,8 @@ package org.angrybee.meet.utils.data;
 
 import java.io.Serializable;
 
+import org.angrybee.meet.utils.json.JsonUtils;
+
 public class User implements Serializable {
 
 	
@@ -86,6 +88,15 @@ public class User implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	/**
+	 * String representation of the object in Json format
+	 */
+	public String toString() {
+		
+		return JsonUtils.toJsonString(this);
+		
 	}
 	
 }
