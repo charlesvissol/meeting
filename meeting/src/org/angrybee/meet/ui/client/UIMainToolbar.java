@@ -15,7 +15,9 @@ public class UIMainToolbar extends JToolBar {
 
 	JLabel meeting;
 	JLabel user;
-
+	JLabel microphone;
+	JLabel spacer = new JLabel ("\u0020");
+	
 	public UIMainToolbar() {
 		initComponents();
 	}
@@ -25,6 +27,18 @@ public class UIMainToolbar extends JToolBar {
 	public void initComponents() {
 
 		this.setLayout(new FlowLayout(FlowLayout.RIGHT));
+
+		
+		/**
+		 * User
+		 */
+		URL userImageURL = UIMainToolbar.class.getResource("cog.png");
+
+		Image userImage = Toolkit.getDefaultToolkit().getImage(userImageURL);
+		ImageIcon userIcon = new ImageIcon(userImage);
+		
+		this.user = new JLabel("\u0020");
+		this.user.setIcon(userIcon);
 		
 		
 		
@@ -36,28 +50,31 @@ public class UIMainToolbar extends JToolBar {
 		Image meetingImage = Toolkit.getDefaultToolkit().getImage(meetingImageURL);
 		ImageIcon meetingIcon = new ImageIcon(meetingImage);
 		
-		this.meeting = new JLabel();
+		this.meeting = new JLabel("\u0020");
 		this.meeting.setIcon(meetingIcon);
 
 		/**
-		 * User
+		 * Microphone
 		 */
-		URL userImageURL = UIMainToolbar.class.getResource("user.png");
+		URL microphoneImageURL = UIMainToolbar.class.getResource("microphone.png");
 
-		Image userImage = Toolkit.getDefaultToolkit().getImage(userImageURL);
-		ImageIcon userIcon = new ImageIcon(userImage);
+		Image microphoneImage = Toolkit.getDefaultToolkit().getImage(microphoneImageURL);
+		ImageIcon microphoneIcon = new ImageIcon(microphoneImage);
 		
-		this.user = new JLabel("Charles Vissol");
-		this.user.setIcon(userIcon);
+		this.microphone = new JLabel("\u0020");
+		this.microphone.setIcon(microphoneIcon);
+
+		
 		
 		
 		/**
 		 * Add components in the toolbar
 		 */
+		this.add(this.microphone);
+		
 		this.add(this.meeting);
+		
 		this.add(this.user);
-		
-		
 	}
 
 }

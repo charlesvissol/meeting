@@ -16,7 +16,7 @@ import org.angrybee.meet.utils.screen.ScreenUtils;
 public class UIMainFrame {
 	
 	
-	private static void initComponents() {
+	public static void initComponents() {
 	     try {
 	    	 UIManager.setLookAndFeel("com.formdev.flatlaf.FlatDarculaLaf");
 	      } catch (ClassNotFoundException ex) {
@@ -36,7 +36,7 @@ public class UIMainFrame {
 			UIMainContainer container = new UIMainContainer();
 
 			// Create and set up the window.
-			mainFrame = new JFrame("ToolBarDemo");
+			mainFrame = new JFrame("Meeting");
 			mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 			Container panel = mainFrame.getContentPane();
